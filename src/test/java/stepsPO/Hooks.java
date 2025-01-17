@@ -19,7 +19,7 @@ public class Hooks {
 
     @Before
     public void iniciarPO(){
-        // WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
         base.driver = new ChromeDriver();
         base.driver.manage().timeouts().implicitlyWait(Duration.ofMillis(60000));
         base.driver.manage().window().maximize();

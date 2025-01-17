@@ -8,6 +8,7 @@ Funcionalidade: Comprar Passagem PO
         E clico no botao Find Flights PO
         Entao visualiza a lista de voos PO
         Quando clico no <ordem_do_voo> PO
+        Entao visualiza a tela de compra PO
     Exemplos:
     | origem      | destino    | ordem_do_voo |
     | "São Paolo" | "Cairo"    | 2            |

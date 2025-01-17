@@ -27,7 +27,7 @@ public class ComprarPassagemBDD {
     public void iniciar() {
         WebDriverManager.chromedriver().setup(); // Garantir o driver correto para o Chrome
         driver = new ChromeDriver(); // Instancia como ChromeDriver
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(3000)); // Definir um tempo de espera implicita de 3s
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(6000)); // Definir um tempo de espera implicita de 6s
         driver.manage().window().maximize(); // Maximizar a tela
     }
 

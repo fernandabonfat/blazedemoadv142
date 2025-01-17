@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(features = { "src/test/resources/featuresPO" }, // caminho para suas features
         glue = { "stepsPO" }, // caminho para a automação
         dryRun = false, // Exibição do log
-        monochrome = true // Detalhes do log
+        monochrome = true // Exibição do log
 )
 public class Runner {
 

@@ -8,6 +8,7 @@ import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import pages.HomePage;
+import pages.PurchasePage;
 import pages.ReservePage;
 import pages.Base;
 
@@ -17,6 +18,7 @@ public class ComprarPassagemPO {
                             // 1 - declarar
     private HomePage homePage; // Só eu posso usar a Home
     private ReservePage reservePage; // Só eu posso usar a Reserve
+    private PurchasePage purchasePage; // Só eu posso usar a Purchase
 
     public String origem;
     public String destino;
@@ -34,7 +36,6 @@ public class ComprarPassagemPO {
         homePage.acessarHomePage(url); // 3 - usar
         // validar se abriu a página correta através do nome da guia
         Assert.assertEquals("BlazeDemo", homePage.lerNomeDaGuia());
-
     }
 
     @Quando("seleciono a {string} e {string} PO")
@@ -62,7 +63,6 @@ public class ComprarPassagemPO {
         homePage.clicarBotaoFindFlights();
         // chama a página sequinte --> Reserve
         reservePage = new ReservePage(driver);
-
     }
 
     @Entao("visualiza a lista de voos PO")
@@ -78,7 +78,6 @@ public class ComprarPassagemPO {
                 e.printStackTrace();
             }
         }
-
     }
 
     @Quando("clico no {int} PO")
@@ -94,4 +93,17 @@ public class ComprarPassagemPO {
         }
     }
 
+    @Entao("visualiza a tela de compra PO")
+    public void visualiza_a_tela_de_compra_po() {
+        purchasePage = new PurchasePage(driver);
+        Assert.assertEquals("Your flight from TLV to SFO has been reserved.", purchasePage.lerCabecalhoPaginaCompra());
+
+        synchronized (driver) {
+            try {
+                driver.wait(1000);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

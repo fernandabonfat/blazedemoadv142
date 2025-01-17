@@ -1,19 +1,28 @@
-Já aprendemos a usar Selenium em algumas abordagens:
-- Gravação e eexecução com Selenium IDE
+
+Nós já aprendemos a usar Selenium em algumas abordagens:
+- Gravação e execução com o Selenium IDE
 - Adaptar a gravação com o Selenium WebDriver
-- Criar nossos próprios scrips simples por programação
+- Criar nosso próprios scripts simples por programação
 
 Em um projeto simples, cada teste é um arquivo
 
 Agora vamos aprender abordagens úteis em projetos com vida útil maior:
-- Projeto utilizando a abordagem do BDD (Desenvolvimento Direcionado por Comportamento)
+
+Projeto utilizando a abordagem BDD (Behavior Driven Development)
+- Desenvolvimento Direcionado por Comportamento
 --> Foco do BDD é melhorar a comunicação do time
---> Usar um plugin / framework chamado Cucumber
---> Seguir a sintaxe Gherkin
+--> Usar um plugin / framework chamado Cucumber (Pepino)
+--> Seguir a sintaxe Gherkin (picles de pepino)
 
 Um teste será composto por 2 arquivos:
-- Arquivo de negócio, escrito em Gherkin (.feature)
-- Arquivo de automação, que faz referência ao .feature (.java)
+- arquivo de negócio, escrito em Gherkin (.feature)
+- arquivo de automação, que faz referência ao .feature (.java)
+
+Projeto utilizando a abordagem Page Objects / Page Factory
+- Pode usar ou não BDD
+--> Foco na manutenção e reaproveitamento de longo prazo
+--> Útil para projetos com Ciclo de Vida de Desenvolvimento de Software Longos
+    (CVDS/SDLC)
 
 Um teste vão ser vários arquivos...
 - um arquivo de mapeamento para cada página ou região da página (*Page.java)
@@ -25,3 +34,28 @@ Um teste vão ser vários arquivos...
 por projeto:
 - um arquivo de hooks (Before e After centralizados)
 - um arquivo runner (executar o teste / maestro)
+
+
+
+Sobre Drivers de Navegador
+- Um Driver é um controlador que fica entre o Selenium e o Browser
+- Existem pelo menos 9 formas diferentes de organizar e configurar o Driver
+As principais:
+- Usar a biblioteca WebDriverManager (atualização automatica)
+- Baixar o driver manualmente para dentro do projeto
+  - Fácil de levar para outro computador (levar para viagem)
+  - Ruim porque quando tem atualização precisa adicionar em todos os projetos
+- Baixar o driver manualmente para uma pasta comum do computador
+  - Atualiza o driver em uma pasta, atualizou para todos os projetos
+  - Precisa ter uma pasta no computador e apontar nas variaveis de ambiente
+    (depende da configuração da máquina para executar)
+
+    To Do:
+    - José e Rafael: Pesquisar mensagem do CDP 131 found 129
+    ---> Depende de atualização da biblioteca do Selenium
+    - Deixar mais lento para visualizar melhor (temporaria)
+    ---> Use o syncronized para realizar uma pausa
+    - Fazer o click na tabela de vôos --> Ok
+    - Conversar sobre DDT via exemplos ou lendo um csv
+    ---> Melhor usar a tabela de Exemplos em Page Objects e BDD
+    ---> Ler CSV pode ser uma opção em scripts mais simples
